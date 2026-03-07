@@ -585,7 +585,33 @@ body {
         color: white;
     }
 }
-
+#red{
+    background: #AA1B1B;
+}
+#sub-red{
+    background: #7F0A0A;
+}
+#yellow{
+    background: #AA6F1B;
+}
+#sub-yellow{
+    background: #7F440A;
+}
+#pink{
+    background: #B41D9B;
+}
+#sub-pink{
+    background: #7F0681;
+}
+#text-red{
+    color: #FFA5A1;
+}
+#text-yellow{
+    color: #FFCEA0;
+}
+#text-pink{
+    color: #FF52E2;
+}
 @media (max-width: 1680px) {
     body {
         width: 100%;
@@ -672,6 +698,7 @@ body {
     }
 
     .items-container {
+        flex-direction: column-reverse;
         width: 100%;
     }
 
@@ -750,6 +777,7 @@ body {
     }
 
     .items-container {
+        flex-direction: column-reverse;
         width: 100%;
     }
 
