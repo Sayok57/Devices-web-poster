@@ -73,6 +73,7 @@ body {
 }
 
 .keycup {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -141,7 +142,7 @@ body {
     width: 33.7%;
     height: fit-content;
     align-items: center;
-    background: #1A1A1A;
+    background: #000000;
 }
 
 .game-ui {
@@ -172,6 +173,7 @@ body {
 }
 
 .start-play-btn {
+    cursor: pointer;
     display: flex;
     background: linear-gradient(to right, red, rgb(255, 0, 242), rgb(255, 170, 0));
     border-radius: 10px;
@@ -213,6 +215,7 @@ body {
 }
 
 .scale-btn {
+    cursor: grab;
     display: flex;
     background: white;
     width: 53px;
@@ -585,33 +588,59 @@ body {
         color: white;
     }
 }
-#red{
+
+#red {
     background: #AA1B1B;
 }
-#sub-red{
+
+#sub-red {
     background: #7F0A0A;
 }
-#yellow{
+
+#yellow {
     background: #AA6F1B;
 }
-#sub-yellow{
+
+#sub-yellow {
     background: #7F440A;
 }
-#pink{
+
+#pink {
     background: #B41D9B;
 }
-#sub-pink{
+
+#sub-pink {
     background: #7F0681;
 }
-#text-red{
+
+#text-red {
     color: #FFA5A1;
 }
-#text-yellow{
+
+#text-yellow {
     color: #FFCEA0;
 }
-#text-pink{
+
+#text-pink {
     color: #FF52E2;
 }
+
+#fpsUi {
+    opacity: 0;
+}
+
+#cps-window {
+    background: rgb(19, 19, 19);
+}
+
+#fps-window {
+    background: rgb(43, 43, 43);
+}
+
+#play-window {
+    background: rgb(19, 19, 19);
+}
+
 @media (max-width: 1680px) {
     body {
         width: 100%;
@@ -761,9 +790,11 @@ body {
         width: 140px;
         height: 40px;
     }
-    #enter-img{
+
+    #enter-img {
         transform: scale(0.5);
     }
+
     .games-container {
         flex-direction: column;
     }
@@ -785,77 +816,97 @@ body {
         width: 100%;
         flex-direction: column-reverse;
     }
-    .display-holder{
+
+    .display-holder {
         left: 35%;
     }
-    .settings-container{
+
+    .settings-container {
         flex-direction: column-reverse;
     }
-    .settings-box{
+
+    .settings-box {
         width: 100%;
     }
-    .crosshair-container{
+
+    .crosshair-container {
         width: 100%;
     }
-    .filters-container{
+
+    .filters-container {
         flex-direction: column-reverse;
     }
-    .filters-box{
+
+    .filters-box {
         width: 100%;
     }
-    .description-container{
+
+    .description-container {
         width: 100%;
     }
-    .description-container{
-        p{
+
+    .description-container {
+        p {
             font-size: 20px;
         }
     }
-    .footer-box{
+
+    .footer-box {
         flex-direction: column;
         gap: 20px;
-        p{
+
+        p {
             font-size: 24px;
         }
     }
 }
-@media (max-width: 600px){
-    #title-curves{
+
+@media (max-width: 600px) {
+    #title-curves {
         display: none;
     }
+
     .settings-btn {
         p {
             padding-left: 10px;
             padding-right: 10px;
         }
     }
-    .settings-colors-btn{
+
+    .settings-colors-btn {
         width: 30px;
         height: 30px;
     }
-    .item-box{
+
+    .item-box {
         transform: scale(0.6);
     }
-    .settings-row{
+
+    .settings-row {
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
-    .display-holder{
+
+    .display-holder {
         left: 30%;
     }
-    .banner-container::after{
+
+    .banner-container::after {
         left: -10px;
     }
-    .footer-box{
+
+    .footer-box {
         flex-direction: column;
         gap: 20px;
-        p{
+
+        p {
             font-size: 16px;
         }
     }
 }
-@media (max-width: 450px){
+
+@media (max-width: 450px) {
     .keycup {
         width: 60px;
         height: 60px;
@@ -879,41 +930,51 @@ body {
         width: 100px;
         height: 40px;
     }
-    .settings-box{
-        h2{
+
+    .settings-box {
+        h2 {
             font-size: 20px;
         }
     }
-    .scaler{
+
+    .scaler {
         width: 200px;
     }
-    .display{
+
+    .display {
         width: 100%;
     }
-    .description-container{
-        p{
+
+    .description-container {
+        p {
             font-size: 16px;
         }
     }
-    .info-container{
-        p{
+
+    .info-container {
+        p {
             font-size: 12px;
         }
     }
-    .scale-btn{
+
+    .scale-btn {
         width: 40px;
         height: 40px;
     }
-    .filters-btn-row{
+
+    .filters-btn-row {
         flex-direction: column;
     }
-    .item-box{
+
+    .item-box {
         transform: scale(0.5);
     }
-    .filters-box{
+
+    .filters-box {
         height: 800px;
     }
-    #filters-colors-btns-container{
+
+    #filters-colors-btns-container {
         flex-direction: row;
     }
 }

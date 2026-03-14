@@ -70,13 +70,13 @@
     </div>
     <div class="mouse-container"></div>
     <div class="games-container">
-        <div class="game-window">
+        <div class="game-window" id="cps-window">
             <div class="game-ui">
-                <p>3 сек</p>
-                <p>0</p>
+                <p id="timer">3 сек</p>
+                <p id="score">0</p>
             </div>
-            <div class="game-content-container">
-                <h2>CPS</h2>
+            <div class="game-content-container" id="cps-content">
+                <h2 id="cps">CPS</h2>
                 <div class="start-play-btn">
                     <p>Start</p>
                 </div>
@@ -85,9 +85,9 @@
                 </div>
             </div>
         </div>
-        <div class="game-window" style="background:black">
+        <div class="game-window" id="fps-window">
             <div class="game-ui" style="justify-content: center;">
-                <p>30</p>
+                <p id="fpsUi">30</p>
             </div>
             <div class="game-content-container">
                 <h2>FPS</h2>
@@ -99,7 +99,7 @@
                 </div>
             </div>
         </div>
-        <div class="game-window">
+        <div class="game-window" id="play-window">
             <div class="game-ui">
                 <p>Game: </p>
                 <p style="color: #CDCDCD">None</p>
