@@ -78,7 +78,7 @@ body {
 }
 
 .keycup {
-    cursor: pointer;
+    cursor: grabbing;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -422,6 +422,7 @@ body {
     height: 50px;
     background: #6B6B6B;
     border-radius: 10px;
+    cursor: pointer;
 
     p {
         padding-left: 33px;
@@ -432,6 +433,7 @@ body {
 }
 
 .settings-colors-btn {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -603,7 +605,12 @@ body {
         color: white;
     }
 }
-
+#left-switch{
+    cursor: pointer;
+}
+#right-switch{
+    cursor: pointer;
+}
 #red {
     background: #AA1B1B;
 }
@@ -691,14 +698,6 @@ body {
     width: 0;
     height: 40px;
     animation: TrailAnim 4s infinite;
-}
-
-.lightTxt {
-    color: black !important
-}
-
-.lightBlock {
-    background: white !important;
 }
 
 @keyframes leftMouseAnim {
