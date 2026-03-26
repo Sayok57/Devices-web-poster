@@ -9,6 +9,11 @@ h3 {
     font-weight: 400;
 }
 
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+
 body {
     width: 100%;
     display: flex;
@@ -123,9 +128,10 @@ body {
 }
 
 .mouse-container {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    overflow: hidden;
     background: #393737;
     width: 100%;
     height: 40px;
@@ -204,6 +210,7 @@ body {
 }
 
 .scaler {
+    position: relative;
     margin-top: 18px;
     margin-bottom: 18px;
     display: flex;
@@ -235,13 +242,13 @@ body {
     width: 33.7%;
     padding-top: 36px;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+}
 
-    h2 {
-        font-size: 48px;
-        color: white;
-        padding-bottom: 40px;
-    }
+.item-box {
+    background-size: 50%;
+    width: 500px;
+    height: 500px;
 }
 
 .filters-settings-container {
@@ -292,6 +299,7 @@ body {
 }
 
 .filters-btn {
+    cursor: pointer;
     display: flex;
     background: #6B6B6B;
     border-radius: 10px;
@@ -307,17 +315,23 @@ body {
     }
 }
 
-.filters-colors-btn {
+.filters-name {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
+    width: 100%;
     height: 40px;
-    background: white;
-    border-radius: 50%;
+    background: #6B6B6B;
+    border-radius: 10px;
+
+    p {
+        color: white;
+        font-size: 20px;
+    }
 }
 
 .select-btn {
+    cursor: pointer;
     display: flex;
     background: linear-gradient(to right, red, rgb(255, 0, 242), rgb(255, 170, 0));
     border-radius: 10px;
@@ -343,7 +357,7 @@ body {
 
     p {
         color: #C2C2C2;
-        font-size: 24px;
+        font-size: 18px;
     }
 }
 
@@ -429,19 +443,21 @@ body {
 }
 
 .crosshair-box {
+    z-index: 2;
     display: flex;
     align-items: center;
 }
 
 .crosshair-row {
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
 .crosshair-col {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 40px;
 }
 
 .crosshair-line-col {
@@ -451,7 +467,6 @@ body {
 }
 
 .crosshair-line-row {
-    margin-top: 110px;
     background: white;
     height: 24px;
     width: 100px;
@@ -625,10 +640,6 @@ body {
     color: #FF52E2;
 }
 
-#fpsUi {
-    opacity: 0;
-}
-
 #cps-window {
     background: rgb(19, 19, 19);
 }
@@ -639,6 +650,85 @@ body {
 
 #play-window {
     background: rgb(19, 19, 19);
+}
+
+.filters-btn.active {
+    background: linear-gradient(to right, red, rgb(255, 0, 242), rgb(255, 170, 0));
+    ;
+}
+
+.white {
+    background: white;
+}
+
+.red {
+    background: red;
+}
+
+.green {
+    background: rgb(68, 255, 47);
+}
+
+.blue {
+    background: rgb(0, 208, 255);
+}
+
+.rgbMouse {
+    position: absolute;
+    left: -6vw;
+    animation: leftMouseAnim 4s infinite;
+}
+
+.rgbMouse2 {
+    position: absolute;
+    left: 98vw;
+    transform: rotate(180deg);
+    animation: rightMouseAnim 4s infinite;
+}
+
+.trail {
+    background: linear-gradient(to right, red, rgb(255, 0, 242), rgb(255, 170, 0));
+    width: 0;
+    height: 40px;
+    animation: TrailAnim 4s infinite;
+}
+
+.lightTxt {
+    color: black !important
+}
+
+.lightBlock {
+    background: white !important;
+}
+
+@keyframes leftMouseAnim {
+    from {
+        left: -2vw;
+    }
+
+    to {
+        left: 100vw;
+    }
+}
+
+@keyframes rightMouseAnim {
+    from {
+        left: 98vw;
+    }
+
+    to {
+        left: -10vw;
+    }
+}
+
+@keyframes TrailAnim {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 105vw;
+    }
 }
 
 @media (max-width: 1680px) {
@@ -729,6 +819,10 @@ body {
     .items-container {
         flex-direction: column-reverse;
         width: 100%;
+    }
+
+    .item-box {
+        transform: rotate(90deg)
     }
 
     .filters-settings-container {
@@ -847,7 +941,7 @@ body {
 
     .description-container {
         p {
-            font-size: 20px;
+            font-size: 16px;
         }
     }
 
@@ -947,7 +1041,7 @@ body {
 
     .description-container {
         p {
-            font-size: 16px;
+            font-size: 12px;
         }
     }
 

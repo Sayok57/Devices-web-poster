@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "icon" href="assets/images/devicesFavIcon.svg">
     <link rel="stylesheet" href="styles/style.css">
     <script src="script.js" defer></script>
-    <title>Web Poster</title>
+    <title>Девайсы</title>
 </head>
 
 <body>
@@ -68,7 +69,10 @@
         </div>
         <img src="assets/images/v2.svg" id="title-curves">
     </div>
-    <div class="mouse-container"></div>
+    <div class="mouse-container">
+        <div class="trail"></div>
+        <img src="assets/images/mousergb.svg" class="rgbMouse" id="mouseSwitch">
+    </div>
     <div class="games-container">
         <div class="game-window" id="cps-window">
             <div class="game-ui">
@@ -92,7 +96,7 @@
             <div class="game-content-container">
                 <h2>FPS</h2>
                 <div class="scaler">
-                    <div class="scale-btn"></div>
+                    <div class="scale-btn" style="left: 0;"></div>
                 </div>
                 <div class="tooltip">
                     <p>?</p>
@@ -102,11 +106,11 @@
         <div class="game-window" id="play-window">
             <div class="game-ui">
                 <p>Game: </p>
-                <p style="color: #CDCDCD">None</p>
+                <p id="game-name">None</p>
             </div>
             <div class="game-content-container">
-                <h2>PLAY</h2>
-                <div class="start-play-btn">
+                <h2 id="playName">Играть</h2>
+                <div class="start-play-btn" id="playBtn">
                     <img src="assets/images/playIcon.svg">
                 </div>
                 <div class="tooltip">
@@ -115,13 +119,14 @@
             </div>
         </div>
     </div>
-    <div class="mouse-container"></div>
+    <div class="mouse-container" style="justify-content: flex-end;">
+        <div class="trail"></div>
+        <img src="assets/images/mousergb.svg" class="rgbMouse2" id="mouseSwitch">
+    </div>
     <div class="block2-container">
         <div class="items-container">
             <div class="item-box">
-                <img src="assets/images/ps5 asset.png">
             </div>
-            <h2>Playstation 5</h2>
         </div>
         <div class="filters-settings-container">
             <div class="filters-container">
@@ -131,13 +136,13 @@
                         <div class="filters-row">
                             <h3>Модель:</h3>
                             <div class="filters-btn-row">
-                                <div class="filters-btn">
+                                <div class="filters-btn" id="psBtn">
                                     <p>Консоль</p>
                                 </div>
-                                <div class="filters-btn">
+                                <div class="filters-btn" id="mouseBtn">
                                     <p>Мышь</p>
                                 </div>
-                                <div class="filters-btn">
+                                <div class="filters-btn" id="keyboardBtn">
                                     <p>Клавиатура</p>
                                 </div>
                             </div>
@@ -145,24 +150,21 @@
                         <div class="filters-row">
                             <h3>Год выпуска:</h3>
                             <div class="filters-btn-row">
-                                <div class="filters-btn">
+                                <div class="filters-btn" id="Btn2000">
+                                    <p>2000</p>
+                                </div>
+                                <div class="filters-btn" id="Btn2016">
                                     <p>2016</p>
                                 </div>
-                                <div class="filters-btn">
-                                    <p>2020</p>
-                                </div>
-                                <div class="filters-btn">
-                                    <p>2025</p>
+                                <div class="filters-btn" id="Btn2026">
+                                    <p>2026</p>
                                 </div>
                             </div>
                         </div>
                         <div class="filters-row">
-                            <h3>Цвет:</h3>
-                            <div class="filters-btn-row" id="filters-colors-btns-container">
-                                <div class="filters-colors-btn"></div>
-                                <div class="filters-colors-btn"></div>
-                                <div class="filters-colors-btn"></div>
-                                <div class="filters-colors-btn"></div>
+                            <h3>Название:</h3>
+                            <div class="filters-name">
+                                <p id="filters-nameId">Playstation 2</p>
                             </div>
                         </div>
                     </div>
@@ -171,11 +173,13 @@
                     </div>
                 </div>
                 <div class="description-container">
-                    <p>PlayStation 5 (PS5) — это флагманская игровая консоль нового поколения от Sony, задающая новые
-                        стандарты в индустрии видеоигр. Её сердцем является мощный кастомный процессор AMD на
-                        архитектуре
-                        Zen 2 и RDNA 2, что обеспечивает потрясающую производительность в разрешении до 4K с поддержкой
-                        технологии трассировки лучей для невероятно реалистичного освещения и отражений.
+                    <p id="desc">Sony PlayStation 2 — это не просто игровая приставка, а настоящий культурный феномен,
+                        ставший самым продаваемым игровым устройством в истории (более 155 млн единиц). Её «секретное
+                        оружие» скрывалось в аппаратной начинке: инженеры Sony добавили в консоль специальный чип IOP,
+                        который позволял ей работать как полноценный Linux-сервер. Именно благодаря этой архитектуре
+                        спецслужбы США в 2002 году закупили партию PS2, собрав из них суперкомпьютер для военных
+                        расчетов, так как производительность такого кластера оказалась дешевле и доступнее официальных
+                        серверных решений того времени.
                     </p>
                 </div>
             </div>
@@ -198,13 +202,13 @@
                         <div class="settings-row">
                             <h2>Длина</h2>
                             <div class="settings-btns-container">
-                                <div class="settings-btn">
+                                <div class="settings-btn" id="addLength">
                                     <p>+</p>
                                 </div>
-                                <div class="settings-btn">
+                                <div class="settings-btn" id="subLength">
                                     <p>-</p>
                                 </div>
-                                <div class="settings-btn">
+                                <div class="settings-btn" id="resetLength">
                                     <p>сброс</p>
                                 </div>
                             </div>
@@ -212,13 +216,13 @@
                         <div class="settings-row">
                             <h2>Отступ</h2>
                             <div class="settings-btns-container">
-                                <div class="settings-btn">
+                                <div class="settings-btn" id="addGap">
                                     <p>+</p>
                                 </div>
-                                <div class="settings-btn">
+                                <div class="settings-btn" id="subGap">
                                     <p>-</p>
                                 </div>
-                                <div class="settings-btn">
+                                <div class="settings-btn" id="resetGap">
                                     <p>сброс</p>
                                 </div>
                             </div>
@@ -226,10 +230,10 @@
                         <div class="settings-row">
                             <h2>Цвет</h2>
                             <div class="settings-btns-container">
-                                <div class="settings-colors-btn"></div>
-                                <div class="settings-colors-btn"></div>
-                                <div class="settings-colors-btn"></div>
-                                <div class="settings-colors-btn"></div>
+                                <div class="settings-colors-btn white" id="color1"></div>
+                                <div class="settings-colors-btn red" id="color2"></div>
+                                <div class="settings-colors-btn green" id="color3"></div>
+                                <div class="settings-colors-btn blue" id="color4"></div>
                             </div>
                         </div>
                     </div>
@@ -237,12 +241,15 @@
             </div>
         </div>
     </div>
-    <div class="mouse-container"></div>
+    <div class="mouse-container">
+        <div class="trail"></div>
+        <img src="assets/images/mousergb.svg" class="rgbMouse" id="mouseSwitch">
+    </div>
     <div class="block3-container">
         <div class="device-info-container">
             <div class="device-container">
                 <div class="display">
-                    <h2>МЫШЬ
+                    <h2 class="device-name">МЫШЬ
                         <div class="stars-row">
                             <img src="assets/images/star.svg">
                             <img src="assets/images/star.svg">
@@ -252,8 +259,8 @@
                         </div>
                     </h2>
                     <div class="switchers">
-                        <img src="assets/images/switch-btn.svg">
-                        <img src="assets/images/switch-btn.svg" style="transform: rotate(180deg)">
+                        <img src="assets/images/switch-btn.svg" id="left-switch">
+                        <img src="assets/images/switch-btn.svg" id="right-switch" style="transform: rotate(180deg)">
                     </div>
                     <div class="display-holder">
                         <img src="assets/images/monitorHandler.svg">
@@ -262,10 +269,9 @@
             </div>
             <div class="info-container">
                 <h2>СОВЕТЫ</h2>
-                <p>Lorem ipsum
-                    dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-                    ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequ </p>
+                <p id="advises">Выбирайте мышь с сенсором Pixart, лёгким весом до 70 г и беспроводной связью. Обратите
+                    внимание на форму: симметрия или эргономика под хват. Для шутеров важны оптические свичи и низкая
+                    задержка. </p>
             </div>
         </div>
         <div class="footer-banner-container">
